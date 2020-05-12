@@ -114,7 +114,7 @@
 	var/hardness = MAT_VALUE_HARD            // Prob of wall destruction by hulk, used for edge damage in weapons.
 	var/reflectiveness = MAT_VALUE_DULL
 
-	var/weight = 20              // Determines blunt damage/throwforce for weapons.
+	var/weight = MAT_VALUE_NORMAL             // Determines blunt damage/throwforce for weapons.
 
 	// Noise when someone is faceplanted onto a table made of this material.
 	var/tableslam_noise = 'sound/weapons/tablehit1.ogg'
@@ -141,7 +141,6 @@
 	var/ore_spread_chance
 	var/ore_scan_icon
 	var/ore_icon_overlay
-	var/sale_price
 	var/value = 1
 
 	// Xenoarch behavior.
@@ -159,6 +158,10 @@
 	var/gas_symbol
 	var/gas_tile_overlay =       "generic"
 	var/gas_condensation_point = INFINITY
+
+	// Armor values generated from properties
+	var/list/basic_armor
+	var/armor_degradation_speed
 
 // Placeholders for light tiles and rglass.
 /material/proc/reinforce(var/mob/user, var/obj/item/stack/material/used_stack, var/obj/item/stack/material/target_stack)
@@ -210,6 +213,7 @@
 		shard_icon = shard_type
 	if(!burn_armor)
 		burn_armor = brute_armor
+	generate_armor_values()
 
 // Return the matter comprising this material.
 /material/proc/get_matter()
@@ -229,9 +233,9 @@
 	return hardness //todo
 
 /material/proc/get_attack_cooldown()
-	if(weight <= MAT_FLAG_LIGHT)
+	if(weight <= MAT_VALUE_LIGHT)
 		return FAST_WEAPON_COOLDOWN
-	if(weight >= MAT_FLAG_HEAVY)
+	if(weight >= MAT_VALUE_HEAVY)
 		return SLOW_WEAPON_COOLDOWN
 	return DEFAULT_WEAPON_COOLDOWN
 

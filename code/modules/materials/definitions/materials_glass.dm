@@ -12,7 +12,7 @@
 	hardness = MAT_VALUE_RIGID + 10	
 	reflectiveness = MAT_VALUE_SHINY
 	melting_point = T0C + 100
-	weight = 14
+	weight = MAT_VALUE_VERY_LIGHT
 	brute_armor = 1
 	burn_armor = 2
 	door_icon_base = "stone"
@@ -21,8 +21,6 @@
 	window_options = list("One Direction" = 1, "Full Window" = 4, "Windoor" = 5)
 	hitsound = 'sound/effects/Glasshit.ogg'
 	conductive = 0
-	sale_price = 1
-	value = 4
 	wall_support_value = 14
 
 /material/glass/proc/is_reinforced()
@@ -37,6 +35,7 @@
 	stack_type = /obj/item/stack/material/glass/phoronglass
 	flags = MAT_FLAG_BRITTLE
 	hardness = MAT_VALUE_HARD
+	weight = MAT_VALUE_LIGHT
 	integrity = 70
 	brute_armor = 2
 	burn_armor = 5
@@ -47,5 +46,4 @@
 	construction_difficulty = MAT_VALUE_HARD_DIY
 	alloy_product = TRUE
 	alloy_materials = list(MAT_GLASS = 2500, MAT_PLATINUM = 1250)
-	sale_price = 2
-	value = 40
+	value = 1.8

@@ -7,13 +7,18 @@ GLOBAL_DATUM_INIT(temp_reagents_holder, /obj, new)
 	var/total_volume = 0
 	var/maximum_volume = 120
 	var/atom/my_atom
+	var/cached_color
 
 /datum/reagents/New(var/maximum_volume = 120, var/atom/my_atom)
+	src.maximum_volume = maximum_volume
 	if(!istype(my_atom))
+#ifdef DISABLE_DEBUG_CRASH
+		return ..()
+#else
 		CRASH("Invalid reagents holder: [log_info_line(my_atom)]")
+#endif
 	..()
 	src.my_atom = my_atom
-	src.maximum_volume = maximum_volume
 
 /datum/reagents/Destroy()
 	. = ..()
@@ -31,6 +36,7 @@ GLOBAL_DATUM_INIT(temp_reagents_holder, /obj, new)
 	. = primary_reagent && decls_repository.get_decl(primary_reagent)
 
 /datum/reagents/proc/update_total() // Updates volume.
+	cached_color = null
 	total_volume = 0
 	primary_reagent = null
 	for(var/R in reagent_volumes)
@@ -146,7 +152,7 @@ GLOBAL_DATUM_INIT(temp_reagents_holder, /obj, new)
 		reagent_volumes[reagent_type] = amount
 		var/tmp_data = newreagent.initialize_data(data)
 		if(tmp_data)
-			LAZYSET(reagent_data, reagent_type, tmp_data)		
+			LAZYSET(reagent_data, reagent_type, tmp_data)
 	else
 		reagent_volumes[reagent_type] += amount
 		if(!isnull(data))

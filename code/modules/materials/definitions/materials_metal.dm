@@ -10,15 +10,14 @@
 	table_icon_base = "stone"
 	icon_reinf = "reinf_stone"
 	icon_colour = "#007a00"
-	weight = 23
+	weight = MAT_VALUE_HEAVY
 	stack_origin_tech = "{'materials':5}"
 	chem_products = list(
 				/decl/reagent/uranium = 20
 				)
 	construction_difficulty = MAT_VALUE_HARD_DIY
 	reflectiveness = MAT_VALUE_MATTE
-	sale_price = 2
-	value = 100
+	value = 1.5
 	removed_by_welder = TRUE
 
 /material/gold
@@ -27,7 +26,7 @@
 	wall_name = "bulkhead"
 	stack_type = /obj/item/stack/material/gold
 	icon_colour = COLOR_GOLD
-	weight = 25
+	weight = MAT_VALUE_HEAVY
 	hardness = MAT_VALUE_FLEXIBLE + 5
 	integrity = 100
 	stack_origin_tech = "{'materials':4}"
@@ -44,8 +43,7 @@
 	ore_spread_chance = 10
 	ore_scan_icon = "mineral_uncommon"
 	ore_icon_overlay = "nugget"
-	sale_price = 3
-	value = 40	
+	value = 1.6
 	removed_by_welder = TRUE
 
 /material/gold/bronze //placeholder for ashtrays
@@ -56,13 +54,13 @@
 	construction_difficulty = MAT_VALUE_HARD_DIY
 	ore_smelts_to = null
 	ore_compresses_to = null
-	sale_price = null
+	value = 1.2
 
 /material/copper
 	display_name = "copper"
 	wall_name = "bulkhead"
-	icon_colour = "#b87333"
-	weight = 15
+	icon_colour = COLOR_COPPER
+	weight = MAT_VALUE_NORMAL
 	hardness = MAT_VALUE_FLEXIBLE + 10
 	reflectiveness = MAT_VALUE_SHINY
 	stack_origin_tech = "{'materials':2}"
@@ -79,7 +77,6 @@
 	ore_name = "tetrahedrite"
 	ore_scan_icon = "mineral_common"
 	ore_icon_overlay = "shiny"
-	sale_price = 1
 	removed_by_welder = TRUE
 
 /material/silver
@@ -88,7 +85,7 @@
 	wall_name = "bulkhead"
 	stack_type = /obj/item/stack/material/silver
 	icon_colour = "#d1e6e3"
-	weight = 23
+	weight = MAT_VALUE_HEAVY
 	hardness = MAT_VALUE_FLEXIBLE + 10
 	reflectiveness = MAT_VALUE_SHINY
 	stack_origin_tech = "{'materials':3}"
@@ -104,16 +101,15 @@
 	ore_name = "native silver"
 	ore_scan_icon = "mineral_uncommon"
 	ore_icon_overlay = "shiny"
-	sale_price = 2
-	value = 35
 	removed_by_welder = TRUE
+	value = 1.2
 
 /material/steel
 	display_name = "steel"
 	lore_text = "A strong, flexible alloy of iron and carbon. Probably the single most fundamentally useful and ubiquitous substance in human space."
 	wall_name = "bulkhead"
 	stack_type = /obj/item/stack/material/steel
-	weight = 25
+	weight = MAT_VALUE_NORMAL
 	integrity = 150
 	brute_armor = 5
 	icon_base = "solid"
@@ -126,12 +122,11 @@
 				)
 	alloy_materials = list(MAT_IRON = 1875, MAT_GRAPHITE = 1875)
 	alloy_product = TRUE
-	sale_price = 1
 	ore_smelts_to = MAT_STEEL
 	construction_difficulty = MAT_VALUE_NORMAL_DIY
 	reflectiveness = MAT_VALUE_SHINY
-	value = 4
 	removed_by_welder = TRUE
+	value = 1.1
 
 /material/steel/holographic
 	display_name = "holographic steel"
@@ -140,7 +135,6 @@
 	conductive = 0
 	alloy_materials = null
 	alloy_product = FALSE
-	sale_price = null
 	hidden_from_codex = TRUE
 	value = 0
 
@@ -156,12 +150,11 @@
 				/decl/reagent/aluminium = 20
 				)
 	integrity = 125
-	weight = 18
+	weight = MAT_VALUE_LIGHT
 	icon_base = "solid"
 	icon_reinf = "reinf_over"
 	icon_colour = "#cccdcc"
 	hitsound = 'sound/weapons/smash.ogg'
-	sale_price = 1
 	reflectiveness = MAT_VALUE_SHINY
 	removed_by_welder = TRUE
 
@@ -172,7 +165,6 @@
 	conductive = 0
 	alloy_materials = null
 	alloy_product = FALSE
-	sale_price = null
 	hidden_from_codex = TRUE
 
 /material/aluminium/holographic/get_recipes(reinf_mat)
@@ -192,15 +184,14 @@
 	brute_armor = 6
 	burn_armor = 10
 	hardness = MAT_VALUE_VERY_HARD
-	weight = 23
+	weight = MAT_VALUE_HEAVY
 	stack_origin_tech = "{'materials':2}"
 	hitsound = 'sound/weapons/smash.ogg'
 	construction_difficulty = MAT_VALUE_HARD_DIY
 	alloy_materials = list(MAT_STEEL = 2500, MAT_PLATINUM = 1250)
 	alloy_product = TRUE
-	sale_price = 2
 	ore_smelts_to = MAT_PLASTEEL
-	value = 12
+	value = 1.4
 	reflectiveness = MAT_VALUE_MATTE
 	removed_by_welder = TRUE
 
@@ -211,7 +202,7 @@
 	burn_armor = 8
 	integrity = 200
 	melting_point = 3000
-	weight = 18
+	weight = MAT_VALUE_LIGHT
 	stack_type = /obj/item/stack/material/titanium
 	icon_base = "metal"
 	door_icon_base = "metal"
@@ -220,8 +211,8 @@
 	construction_difficulty = MAT_VALUE_VERY_HARD_DIY
 	alloy_materials = null
 	alloy_product = FALSE
-	value = 30
 	reflectiveness = MAT_VALUE_SHINY
+	value = 1.5
 
 /material/plasteel/ocp
 	display_name = "osmium-carbide plasteel"
@@ -233,13 +224,13 @@
 	icon_colour = "#9bc6f2"
 	brute_armor = 4
 	burn_armor = 20
-	weight = 27
+	weight = MAT_VALUE_HEAVY
 	stack_origin_tech = "{'materials':3}"
 	alloy_materials = list(MAT_PLASTEEL = 7500, MAT_OSMIUM = 3750)
 	construction_difficulty = MAT_VALUE_VERY_HARD_DIY
 	alloy_product = TRUE
-	sale_price = 3
 	reflectiveness = MAT_VALUE_SHINY
+	value = 1.8
 
 /material/osmium
 	display_name = "osmium"
@@ -251,11 +242,10 @@
 	sheet_singular_name = "ingot"
 	sheet_plural_name = "ingots"
 	construction_difficulty = MAT_VALUE_VERY_HARD_DIY
-	sale_price = 3
 	ore_smelts_to = MAT_OSMIUM
-	value = 30
 	reflectiveness = MAT_VALUE_SHINY
 	removed_by_welder = TRUE
+	value = 1.3
 
 /material/platinum
 	display_name = "platinum"
@@ -263,7 +253,7 @@
 	wall_name = "bulkhead"
 	stack_type = /obj/item/stack/material/platinum
 	icon_colour = "#deddff"
-	weight = 27
+	weight = MAT_VALUE_VERY_HEAVY
 	stack_origin_tech = "{'materials':2}"
 	sheet_singular_name = "ingot"
 	sheet_plural_name = "ingots"
@@ -275,10 +265,9 @@
 	ore_name = "raw platinum"
 	ore_scan_icon = "mineral_rare"
 	ore_icon_overlay = "shiny"
-	sale_price = 5
-	value = 80
 	reflectiveness = MAT_VALUE_SHINY
 	removed_by_welder = TRUE
+	value = 1.5
 
 /material/iron
 	display_name = "iron"
@@ -286,7 +275,7 @@
 	wall_name = "bulkhead"
 	stack_type = /obj/item/stack/material/iron
 	icon_colour = "#5c5454"
-	weight = 22
+	weight = MAT_VALUE_HEAVY
 	sheet_singular_name = "ingot"
 	sheet_plural_name = "ingots"
 	hitsound = 'sound/weapons/smash.ogg'
@@ -294,8 +283,6 @@
 	chem_products = list(
 				/decl/reagent/iron = 20
 				)
-	sale_price = 1
-	value = 5
 	reflectiveness = MAT_VALUE_MATTE
 	removed_by_welder = TRUE
 
@@ -312,9 +299,9 @@
 	weight = 500
 	construction_difficulty = MAT_VALUE_HARD_DIY
 	hidden_from_codex = TRUE
-	value = 100
 	reflectiveness = MAT_VALUE_SHINY
 	removed_by_welder = TRUE
+	value = 3
 
 // Likewise.
 /material/voxalloy/elevatorium
@@ -338,6 +325,7 @@
 	construction_difficulty = MAT_VALUE_VERY_HARD_DIY
 	hidden_from_codex = TRUE
 	removed_by_welder = TRUE
+	value = 2.5
 
 /material/aliumium/New()
 	icon_base = "metal"
@@ -365,8 +353,8 @@
 	ore_scan_icon = "mineral_common"
 	ore_name = "hematite"
 	ore_icon_overlay = "lump"
-	sale_price = 1
 	removed_by_welder = TRUE
+	value = 0.8
 
 /material/rutile
 	display_name = "rutile"
@@ -379,5 +367,5 @@
 	ore_scan_icon = "mineral_uncommon"
 	ore_name = "rutile"
 	ore_icon_overlay = "lump"
-	sale_price = 2
 	removed_by_welder = TRUE
+	value = 0.8

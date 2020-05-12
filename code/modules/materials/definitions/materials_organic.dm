@@ -7,7 +7,7 @@
 	icon_reinf = "reinf_over"
 	icon_colour = COLOR_WHITE
 	hardness = MAT_VALUE_SOFT
-	weight = 5
+	weight = MAT_VALUE_EXTREMELY_LIGHT
 	melting_point = T0C+371 //assuming heat resistant plastic
 	stack_origin_tech = "{'materials':3}"
 	conductive = 0
@@ -15,7 +15,6 @@
 	chem_products = list(
 				/decl/reagent/toxin/plasticide = 20
 				)
-	sale_price = 1
 	reflectiveness = MAT_VALUE_SHINY
 	wall_support_value = 10
 
@@ -23,7 +22,6 @@
 	display_name = "holographic plastic"
 	stack_type = null
 	shard_type = SHARD_NONE
-	sale_price = null
 	hidden_from_codex = TRUE
 
 /material/plastic/holographic/get_recipes(reinf_mat)
@@ -40,14 +38,14 @@
 	icon_colour = "#aaaaaa"
 	hardness = MAT_VALUE_SOFT
 	brute_armor = 1
-	weight = 1
+	weight = MAT_VALUE_EXTREMELY_LIGHT - 5
 	ignition_point = T0C+232 //"the temperature at which book-paper catches fire, and burns." close enough
 	melting_point = T0C+232 //temperature at which cardboard walls would be destroyed
 	stack_origin_tech = "{'materials':1}"
 	door_icon_base = "wood"
 	destruction_desc = "crumples"
 	conductive = 0
-	value = 0
+	value = 0.5
 	reflectiveness = MAT_VALUE_DULL
 	wall_support_value = 0
 
@@ -66,6 +64,8 @@
 	hidden_from_codex = TRUE
 	construction_difficulty = MAT_VALUE_NORMAL_DIY
 	reflectiveness = MAT_VALUE_DULL
+	hardness = MAT_VALUE_SOFT
+	weight = MAT_VALUE_EXTREMELY_LIGHT
 	wall_support_value = 0
 
 /material/cloth/yellow
@@ -121,6 +121,8 @@
 	stack_type = null
 	construction_difficulty = MAT_VALUE_NORMAL_DIY
 	reflectiveness = MAT_VALUE_DULL
+	hardness = MAT_VALUE_SOFT
+	weight = MAT_VALUE_EXTREMELY_LIGHT
 	wall_support_value = 0
 	hidden_from_codex = TRUE
 
@@ -134,13 +136,13 @@
 	conductive = 0
 	hidden_from_codex = TRUE
 	construction_difficulty = MAT_VALUE_NORMAL_DIY
-	value = 1
 	integrity = 50
 	hardness = MAT_VALUE_SOFT
-	weight = 5
+	weight = MAT_VALUE_EXTREMELY_LIGHT
 	explosion_resistance = 1
 	reflectiveness = MAT_VALUE_DULL
 	wall_support_value = 0
+	value = 1.2
 	var/tans_to = MAT_LEATHER_GENERIC
 
 /material/skin/lizard
@@ -148,15 +150,15 @@
 	icon_colour = "#626952"
 	tans_to = MAT_LEATHER_LIZARD
 	hardness = MAT_VALUE_FLEXIBLE
-	weight = 10
+	weight = MAT_VALUE_VERY_LIGHT
 
 /material/skin/insect
 	display_name = "chitin"
-	icon_colour = "#7a726d"
+	icon_colour = "#7a776d"
 	tans_to = MAT_LEATHER_CHITIN
 	integrity = 75
 	hardness = MAT_VALUE_RIGID
-	weight = 15
+	weight = MAT_VALUE_VERY_LIGHT
 	brute_armor = 2
 
 /material/skin/fur
@@ -229,20 +231,19 @@
 	hitsound = 'sound/weapons/smash.ogg'
 	integrity = 75
 	hardness = MAT_VALUE_RIGID
-	weight = 18
-	value = 1
+	weight = MAT_VALUE_LIGHT
 	reflectiveness = MAT_VALUE_MATTE
 	wall_support_value = 22
 
 /material/bone/fish
 	display_name = "fishbone"
 	hardness = MAT_VALUE_FLEXIBLE
-	weight = 13
+	weight = MAT_VALUE_VERY_LIGHT
 
 /material/bone/cartilage
 	display_name = "cartilage"
 	hardness = 0
-	weight = 10
+	weight = MAT_VALUE_EXTREMELY_LIGHT
 
 /material/leather
 	display_name = "leather"
@@ -255,18 +256,24 @@
 	stack_type = /obj/item/stack/material/generic/skin
 	hidden_from_codex = TRUE
 	construction_difficulty = MAT_VALUE_NORMAL_DIY
-	value = 3
 	integrity = 50
 	hardness = MAT_VALUE_FLEXIBLE
-	weight = 10
+	weight = MAT_VALUE_EXTREMELY_LIGHT
 	reflectiveness = MAT_VALUE_MATTE
 	wall_support_value = 0
 
+/material/leather/synth
+	display_name = "synthleather"
+	icon_colour = "#1f1f20"
+	ignition_point = T0C+150
+	melting_point = T0C+100
+
 /material/leather/lizard
-	display_name = "hide"
+	display_name = "scaled hide"
+	icon_colour = "#434b31"
 	integrity = 75
 	hardness = MAT_VALUE_RIGID
-	weight = 15
+	weight = MAT_VALUE_LIGHT
 	reflectiveness = MAT_VALUE_SHINY
 
 /material/leather/fur
@@ -275,7 +282,8 @@
 /material/leather/chitin
 	display_name = "treated chitin"
 	integrity = 100
+	icon_colour = "#5c5a54"
 	hardness = MAT_VALUE_HARD
-	weight = 18
+	weight = MAT_VALUE_NORMAL
 	brute_armor = 2
 	wall_support_value = 14
