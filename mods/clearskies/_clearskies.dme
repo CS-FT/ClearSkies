@@ -1,0 +1,13 @@
+#ifndef MODPACK_CLEARSKIES
+#define MODPACK_CLEARSKIES
+// BEGIN_INCLUDE
+#include "_clearskies.dm"
+#include "lobby\lobby.dm"
+// END_INCLUDE
+// BEGIN_INTERNALS
+// END_INTERNALS
+// BEGIN_FILE_DIR
+#define FILE_DIR .
+// END_FILE_DIR
+// BEGIN_PREFERENCES
+// END_PREFERENCES
