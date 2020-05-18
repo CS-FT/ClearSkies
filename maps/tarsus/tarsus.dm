@@ -9,6 +9,8 @@
 	#include "tarsus_lobby.dm"
 
 	#include "tarsus-1.dmm"
+	#include "tarsus-2.dmm"
+	#include "tarsus-3.dmm"
 
 	#define using_map_DATUM /datum/map/tarsus
 
