@@ -22,9 +22,9 @@ var/list/icon_state_cache = list()
 /obj/item/Initialize(ml, material_key)
 	. = ..()
 	if(on_mob_icon)
-		has_inventory_icon = check_state_in_icon("inventory", icon)
+		has_inventory_icon = check_state_in_icon(ICON_STATE_INV, icon)
 		icon = on_mob_icon
-		icon_state = "world"
+		icon_state = ICON_STATE_WORLD
 		update_icon()
 
 /obj/item/hud_layerise()
@@ -38,10 +38,7 @@ var/list/icon_state_cache = list()
 /obj/item/proc/update_world_inventory_state()
 	if(on_mob_icon && has_inventory_icon)
 		var/last_state = icon_state
-		if(plane == HUD_PLANE)
-			icon_state = "inventory"
-		else
-			icon_state = "world"
+		icon_state = get_world_inventory_state()
 		if(last_state != icon_state)
 			update_icon()
 
@@ -49,9 +46,9 @@ var/list/icon_state_cache = list()
 	if(!on_mob_icon)
 		return
 	if(plane == HUD_PLANE && has_inventory_icon)
-		return "inventory"
+		return ICON_STATE_INV
 	else
-		return "world"
+		return ICON_STATE_WORLD
 
 /mob/proc/get_bodytype()
 	return
